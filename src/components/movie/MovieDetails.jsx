@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useKey } from "../../hooks/useKey";
 import StarRating from "../../StarRating";
 import Loader from "../ui/Loader";
+import styles from "./MovieDetails.module.css";
 
 function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
@@ -71,17 +72,17 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     [title]
   );
   return (
-    <div className="details">
+    <div className={styles.details}>
       {isLoading ? (
         <Loader />
       ) : (
         <>
           <header>
-            <button className="btn-back" onClick={onCloseMovie}>
+            <button className={styles.btnback} onClick={onCloseMovie}>
               &larr;
             </button>
             <img src={poster} alt={`Poster of ${movie} movie`} />
-            <div className="details-overview">
+            <div className={styles.detailsoverview}>
               <h2>{title}</h2>
               <p>
                 {released} &bull; {runtime}
@@ -97,7 +98,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
           {/* <p>{avgRating}</p> */}
 
           <section>
-            <div className="rating">
+            <div className={styles.rating}>
               {!isWatched ? (
                 <>
                   <StarRating
@@ -106,7 +107,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
                     onSetRating={setUserRating}
                   />
                   {userRating > 0 && (
-                    <button className="btn-add" onClick={handleAdd}>
+                    <button className={styles.btnadd} onClick={handleAdd}>
                       + Add to list
                     </button>
                   )}

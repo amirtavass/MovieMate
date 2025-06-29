@@ -1,6 +1,7 @@
+import styles from "./ErrorMessage.module.css";
 function ErrorMessage({ message }) {
   return (
-    <p className="error">
+    <p className={styles.error}>
       <span>⛔</span>
       {message}
     </p>

@@ -1,0 +1,10 @@
+.numresults {
+  justify-self: end;
+  font-size: 1.8rem;
+}
+@media (min-width: 640px) {
+  .numResults {
+    justify-self: end;
+    font-size: 1.8rem;
+  }
+}

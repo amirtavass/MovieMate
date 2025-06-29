@@ -1,6 +1,7 @@
+import styles from "./NumResults.module.css";
 function NumResults({ movies }) {
   return (
-    <p className="num-results">
+    <p className={styles.numresults}>
       Found <strong>{movies.length}</strong> results
     </p>
   );

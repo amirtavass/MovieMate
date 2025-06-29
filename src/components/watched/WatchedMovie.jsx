@@ -1,3 +1,4 @@
+import styles from "./WatchedMovie.module.css";
 function WatchedMovie({ movie, onDeleteMovie }) {
   return (
     <li>
@@ -17,7 +18,7 @@ function WatchedMovie({ movie, onDeleteMovie }) {
           <span>{movie.runtime} min</span>
         </p>
         <button
-          className="btn-delete"
+          className={styles.btndelete}
           onClick={() => onDeleteMovie(movie.imdbID)}
         >
           X

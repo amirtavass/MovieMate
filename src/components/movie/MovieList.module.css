@@ -1,0 +1,90 @@
+.list {
+  list-style: none;
+  padding: 0.8rem 0;
+  overflow: auto;
+}
+
+.list li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 2.4rem;
+  font-size: 1.6rem;
+  align-items: center;
+  padding: 1.6rem 3.2rem;
+  border-bottom: 1px solid var(--color-background-100);
+}
+
+.list.listmovies li {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.list.listmovies li:hover {
+  background-color: var(--color-background-100);
+}
+
+.list img {
+  width: 100%;
+  grid-row: 1 / -1;
+}
+
+.list h3 {
+  font-size: 1.8rem;
+}
+
+.list div {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.list p {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+@media (min-width: 640px) {
+  .list li {
+    grid-template-columns: 4rem 1fr;
+    column-gap: 2rem;
+    font-size: 1.5rem;
+    padding: 1.4rem 2.5rem;
+  }
+
+  .list h3 {
+    font-size: 1.6rem;
+  }
+
+  .list div {
+    gap: 2rem;
+  }
+
+  .list p {
+    gap: 0.8rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .list li {
+    grid-template-columns: 4rem 1fr;
+    column-gap: 2.4rem;
+    font-size: 1.6rem;
+    padding: 1.6rem 3.2rem;
+  }
+
+  .list h3 {
+    font-size: 1.8rem;
+  }
+
+  .list div {
+    gap: 2.4rem;
+  }
+
+  .list p {
+    gap: 0.8rem;
+    font-size: 1.4rem;
+  }
+}

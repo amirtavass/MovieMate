@@ -12,6 +12,7 @@ import MovieList from "./components/movie/MovieList";
 import MovieDetails from "./components/movie/MovieDetails";
 import WatchedSummary from "./components/watched/WatchedSummary";
 import WatchedMoviesList from "./components/watched/WatchedMoviesList";
+import styles from "./App.module.css";
 
 export default function App() {
   const [query, setQuery] = useState("");
@@ -37,7 +38,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <div className={styles.container}>
       <NavBar>
         <Search query={query} setQuery={setQuery} />
         <NumResults movies={movies} />
@@ -69,6 +70,6 @@ export default function App() {
           )}
         </Box>
       </Main>
-    </>
+    </div>
   );
 }

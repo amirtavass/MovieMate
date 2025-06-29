@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useKey } from "../../hooks/useKey";
+import styles from "./Search.module.css";
 
 function Search({ query, setQuery }) {
   const [localQuery, setLocalQuery] = useState(query);
@@ -20,7 +21,7 @@ function Search({ query, setQuery }) {
 
   return (
     <input
-      className="search"
+      className={styles.search}
       type="text"
       placeholder="Search movies..."
       value={localQuery}

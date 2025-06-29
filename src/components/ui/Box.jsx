@@ -1,10 +1,14 @@
 import { useState } from "react";
+import styles from "./Box.module.css";
 
 function Box({ children }) {
   const [isOpen, setIsOpen] = useState(true);
   return (
-    <div className="box">
-      <button className="btn-toggle" onClick={() => setIsOpen((open) => !open)}>
+    <div className={styles.box}>
+      <button
+        className={styles.btntoggle}
+        onClick={() => setIsOpen((open) => !open)}
+      >
         {isOpen ? "–" : "+"}
       </button>
       {isOpen && children}
