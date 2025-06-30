@@ -1,14 +1,14 @@
 .main {
   margin-top: 2.4rem;
-  height: calc(100vh - 7.2rem - 3 * 2.4rem);
   display: flex;
-  gap: 2.4rem;
+  flex-direction: column;
+  gap: 2rem;
   justify-content: center;
 }
+
 @media (min-width: 640px) {
   .main {
     margin-top: 2rem;
-    min-height: calc(100vh - 7.2rem - 4rem);
     gap: 2rem;
   }
 }

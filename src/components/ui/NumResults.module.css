@@ -1,10 +1,18 @@
 .numresults {
   justify-self: end;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  text-align: right;
 }
+
 @media (min-width: 640px) {
-  .numResults {
-    justify-self: end;
+  .numresults {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .numresults {
     font-size: 1.8rem;
   }
 }

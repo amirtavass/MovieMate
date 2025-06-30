@@ -1,23 +1,24 @@
 .navbar {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   height: 7.2rem;
-  padding: 0 3.2rem;
+  padding: 0 1.1rem;
   background-color: var(--color-primary);
   border-radius: 0.9rem;
+  gap: 1rem;
 }
+
 @media (min-width: 640px) {
-  .navBar {
-    grid-template-columns: auto 1fr auto;
-    gap: 2rem;
-    height: 7.2rem;
-    padding: 0 2rem;
+  .navbar {
+    padding: 0 2.4rem;
+    gap: 1.5rem;
   }
 }
 
 @media (min-width: 768px) {
-  .navBar {
+  .navbar {
     padding: 0 3.2rem;
+    gap: 2rem;
   }
 }
