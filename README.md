@@ -205,6 +205,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
+
+
 **Made with ❤️ by [Amirtavass](https://github.com/amirtavass)**
 
 *MovieMate - Your personal movie companion that grows with you!*
