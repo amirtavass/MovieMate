@@ -22,7 +22,10 @@ Your personal movie companion! A modern, responsive movie search and tracking ap
 - **📚 Watched List Page**: Dedicated space for your watched movies collection
 
 ## 🚀 Screenshots
-![image](https://github.com/user-attachments/assets/967f0bdc-6604-4c94-bdeb-7aad13369379)
+<img width="1350" height="606" alt="image" src="https://github.com/user-attachments/assets/3d5cf2f7-4036-4aeb-91f6-799734dc2ee8" />
+<img width="1363" height="612" alt="image" src="https://github.com/user-attachments/assets/371c787d-c38b-43c6-bee3-73f5dd7bf897" />
+
+
 
 
 
