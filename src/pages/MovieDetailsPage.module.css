@@ -1,0 +1,13 @@
+.detailsContainer {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  margin-top: 2rem; /* Add space for sticky navbar */
+}
+
+@media (min-width: 768px) {
+  .detailsContainer {
+    padding: 2rem 3rem;
+    margin-top: 3rem;
+  }
+}

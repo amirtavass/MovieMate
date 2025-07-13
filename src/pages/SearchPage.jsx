@@ -30,12 +30,20 @@ function SearchResults() {
       <div className={styles.resultContainer}>
         {isLoading && <Loader />}
         {error && <ErrorMessage message={error} />}
+        {!isLoading && !error && !query && (
+          <div className={styles.welcomeMessage}>
+            <p>
+              Explore thousands of movies and add your favorites to your watched
+              list
+            </p>
+          </div>
+        )}
         {!isLoading && !error && movies?.length > 0 && (
           <>
             <p className={styles.resultsCount}>
               Found <strong>{movies.length}</strong> results for "{query}"
             </p>
-            <MovieList movies={movies} onSelectMovie={() => {}} />
+            <MovieList movies={movies} />
           </>
         )}
         {!isLoading && !error && query && movies?.length === 0 && (

@@ -8,6 +8,7 @@
   border-radius: 0.9rem;
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 .navLinks {
   display: flex;

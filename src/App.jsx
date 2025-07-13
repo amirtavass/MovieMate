@@ -6,17 +6,7 @@ import HomePage from "./pages/HomePage";
 import SearchPage from "./pages/SearchPage";
 import WatchedPage from "./pages/WatchedPage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
-// import ErrorMessage from "./components/ui/ErrorMessage";
-// import Loader from "./components/ui/Loader";
-// import Box from "./components/ui/Box";
-// import Main from "./components/ui/Main";
-// import Search from "./components/ui/Search";
-// import NumResults from "./components/ui/NumResults";
-// import NavBar from "./Layout/NavBar";
-// import MovieList from "./components/movie/MovieList";
-// import WatchedSummary from "./components/watched/WatchedSummary";
-// import WatchedMoviesList from "./components/watched/WatchedMoviesList";
-import styles from "./App.module.css";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 export default function App() {
@@ -53,38 +43,5 @@ export default function App() {
         </Routes>
       </AppLayout>
     </BrowserRouter>
-    // <div className={styles.container}>
-    //   <NavBar>
-    //     <Search query={query} setQuery={setQuery} />
-    //     <NumResults movies={movies} />
-    //   </NavBar>
-    //   <Main>
-    //     <Box>
-    //       {!isLoading && !error && (
-    //         <MovieList movies={movies} onSelectMovie={handleSelectMovie} />
-    //       )}
-    //       {isLoading && <Loader />}
-    //       {error && <ErrorMessage message={error} />}
-    //     </Box>
-    //     <Box>
-    //       {selectedId ? (
-    //         <MovieDetails
-    //           selectedId={selectedId}
-    //           onCloseMovie={handleCloseMovie}
-    //           onAddWatched={handleAddWatched}
-    //           watched={watched}
-    //         />
-    //       ) : (
-    //         <>
-    //           <WatchedSummary watched={watched} />
-    //           <WatchedMoviesList
-    //             watched={watched}
-    //             onDeleteMovie={handleDeleteMovie}
-    //           />
-    //         </>
-    //       )}
-    //     </Box>
-    //   </Main>
-    // </div>
   );
 }

@@ -52,3 +52,14 @@
   color: var(--color-text-dark);
   padding: 4rem 2rem;
 }
+.welcomeMessage {
+  text-align: center;
+  padding: 5rem 3rem;
+}
+.welcomeMessage p {
+  font-size: 1.8rem;
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  max-width: 50rem;
+  margin: 0 auto;
+}
