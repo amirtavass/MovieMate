@@ -1,8 +1,17 @@
 # 🍿 MovieMate
 
-Your personal movie companion! A modern, responsive movie search and tracking application built with React. Search for movies, view detailed information, rate them, and keep track of your watched movies list.
+Your personal movie companion! A modern, responsive movie search and tracking application built with React. Navigate through dedicated pages, search for movies, view detailed information, rate them, and keep track of your watched movies list with seamless routing.
 
 ## 📝 Update Log
+Version 4.0.0 (Latest - Complete Router Implementation)
+
+✅ Multi-Page Architecture: Fully implemented React Router with clean URL structure
+✅ Dedicated Pages: Separate routes for Home (/), Search (/search), Movie Details (/movie/:id), and Watched List (/watched)
+✅ Navigation System: Sticky navbar with active link highlighting and responsive design
+✅ Movie Details Route: Dynamic routing with URL parameters for movie IDs
+✅ Enhanced UX: Back navigation, breadcrumb-style routing, and intuitive page flow
+✅ Layout Components: Structured layout system with AppLayout, NavBar, and Footer
+✅ URL State Management: Movie details accessible via direct URLs for sharing
 
 ### Version 3.0.0 (Latest - Major Architecture Update)
 - ✅ **React Router**: Multi-page navigation with dedicated routes
@@ -14,15 +23,55 @@ Your personal movie companion! A modern, responsive movie search and tracking ap
 
 ## ✨ Features
 
-- **🏠 Homepage**: Modern hero section with cinema imagery and clear navigation
-- **🔍 Dedicated Search Page**: Full-page search experience with real-time results
-- **📱 Responsive Design**: Mobile-first design that works seamlessly on all devices
-- **🧭 React Router Navigation**: Clean URLs and page-based architecture
-- **📽️ Movie Details Page**: Dedicated route for comprehensive movie information
-- **📚 Watched List Page**: Dedicated space for your watched movies collection
+🏠 Homepage Experience
+
+Modern hero section with cinematic background imagery
+Clear call-to-action guiding users to start exploring
+Responsive design with smooth animations
+
+🔍 Dedicated Search Experience
+
+Full-Page Search: Dedicated /search route for focused movie discovery
+Debounced Search: Real-time results with 500ms delay optimization
+Search States: Loading, error, welcome, and results states with proper feedback
+Results Display: Clean movie grid with click-to-view details
+
+📽️ Movie Details System
+
+Dynamic Routing: /movie/:id URLs for shareable movie pages
+Comprehensive Information: Plot, cast, crew, ratings, awards, and box office data
+Interactive Rating: Star rating system with instant feedback
+Watched Status: Smart detection of already-rated movies
+Navigation: Smooth back navigation with breadcrumb-style UX
+
+📚 Personal Collection
+
+Watched List Page: Dedicated /watched route for your movie collection
+Rating Management: View and manage your personal ratings
+Statistics Summary: Average ratings, runtime, and collection insights
+Quick Actions: Remove movies from your watched list
+
+🧭 Navigation & Routing
+
+Clean URLs: RESTful routing structure for all pages
+Active Navigation: Visual feedback for current page location
+Responsive Navbar: Mobile-friendly navigation with logo branding
+Footer Integration: Complete layout with footer and copyright
+
+📱 Technical Excellence
+
+React Router v6: Modern routing with nested layouts
+CSS Modules: Scoped styling preventing conflicts
+Custom Hooks: Reusable logic for movies, localStorage, and keyboard events
+Local Storage: Persistent data across browser sessions
+Responsive Design: Mobile-first approach with multiple breakpoints
 
 ## 🚀 Screenshots
+#Homepage
 <img width="1350" height="606" alt="image" src="https://github.com/user-attachments/assets/3d5cf2f7-4036-4aeb-91f6-799734dc2ee8" />
+
+
+#Homepage
 <img width="1363" height="612" alt="image" src="https://github.com/user-attachments/assets/371c787d-c38b-43c6-bee3-73f5dd7bf897" />
 
 
@@ -72,15 +121,27 @@ Your personal movie companion! A modern, responsive movie search and tracking ap
 
 ## 🎯 How to Use
 
-1. **Search Movies**: Type in the search bar to find movies (minimum 3 characters)
-2. **View Details**: Click on any movie to see detailed information
-3. **Rate Movies**: Use the star rating system to rate movies (1-10 stars)
-4. **Add to Watched**: Click "Add to list" after rating to save to your watched movies
-5. **Manage Watched List**: View your statistics and remove movies with the X button
-6. **Responsive Experience**: Use on any device - mobile, tablet, or desktop
-7. **Keyboard Shortcuts**: 
-   - Press `Enter` to focus the search bar
-   - Press `Escape` to close movie details
+Navigation Flow
+
+Homepage (/) - Start your movie journey with the hero section
+Search Movies (/search) - Use the dedicated search page to find movies
+Movie Details (/movie/:id) - Click any movie to view comprehensive details
+Watched List (/watched) - Manage your personal movie collection
+
+Key Actions
+
+Search: Type in the search bar (minimum 3 characters) for real-time results
+View Details: Click any movie card to navigate to its dedicated details page
+Rate Movies: Use the 1-10 star rating system on movie detail pages
+Add to Collection: Rate a movie to automatically add it to your watched list
+Manage Collection: Navigate to /watched to view and remove movies
+Share Movies: Copy movie detail URLs to share specific movies
+
+Keyboard Shortcuts
+
+Enter: Focus the search bar from anywhere
+Escape: Navigate back from movie details
+Browser Back/Forward: Full browser navigation support
 
 ## 📁 Project Structure
 
@@ -102,29 +163,36 @@ moviemate/
 │   │   │   └── WatchedSummary.module.css
 │   │   └── ui/
 │   │       ├── Box.jsx
-│   │       ├── Box.module.css
 │   │       ├── ErrorMessage.jsx
-│   │       ├── ErrorMessage.module.css
 │   │       ├── Loader.jsx
-│   │       ├── Loader.module.css
 │   │       ├── Logo.jsx
-│   │       ├── Logo.module.css
-│   │       ├── Main.jsx
-│   │       ├── Main.module.css
-│   │       ├── NavBar.jsx
-│   │       ├── NavBar.module.css
-│   │       ├── NumResults.jsx
-│   │       ├── NumResults.module.css
-│   │       ├── Search.jsx
-│   │       └── Search.module.css
+│   │       ├── StarRating.jsx
+│   │       └── [Additional UI components]
+│   ├── Layout/
+│   │   ├── AppLayout.jsx
+│   │   ├── AppLayout.module.css
+│   │   ├── NavBar.jsx
+│   │   ├── NavBar.module.css
+│   │   ├── Footer.jsx
+│   │   └── Footer.module.css
+│   ├── pages/
+│   │   ├── HomePage.jsx
+│   │   ├── HomePage.module.css
+│   │   ├── SearchPage.jsx
+│   │   ├── SearchPage.module.css
+│   │   ├── MovieDetailsPage.jsx
+│   │   ├── MovieDetailsPage.module.css
+│   │   ├── WatchedPage.jsx
+│   │   └── WatchedPage.module.css
 │   ├── hooks/
 │   │   ├── useKey.jsx
 │   │   ├── useLocalStorageState.jsx
 │   │   └── useMovies.jsx
-│   ├── StarRating.jsx
 │   ├── App.jsx
 │   ├── App.module.css
 │   └── index.css
+├── public/
+│   └── images/
 ├── .env
 ├── package.json
 └── README.md
@@ -139,28 +207,26 @@ moviemate/
 
 ## 🌟 Key Features & Improvements
 
-### 🎨 **CSS Modules Architecture**
-- **Scoped Styling**: Each component has its own CSS module preventing style conflicts
-- **Maintainable Code**: Better organization and easier debugging
-- **Responsive Design**: Mobile-first approach with breakpoints at 640px, 768px, and 1024px
+🎨 Modern Architecture
 
-### 🔍 **Optimized Search Experience**
-- **Debounced Input**: 500ms delay reduces API calls and improves performance
-- **Responsive Layout**: Search bar adapts to different screen sizes
-- **Real-time Results**: Instant feedback with loading states
+React Router Integration: Clean URL structure with /, /search, /movie/:id, /watched
+Layout System: Reusable AppLayout with navbar and footer
+Component Organization: Logical separation of pages, layouts, and components
+CSS Modules: Scoped styling preventing conflicts across components
 
-### 📱 **Mobile-First Responsive Design**
-- **Adaptive Layout**: Stacked layout on mobile, side-by-side on desktop
-- **Touch-Friendly**: Properly sized buttons and interactive elements
-- **Optimized Content**: Condensed text and smart spacing on smaller screens
+🔍 Enhanced Search Experience
 
-### 🎯 **Enhanced Components**
-- **Custom Hooks**: 
-  - `useMovies` - Handles movie API calls with abort controllers and error handling
-  - `useLocalStorageState` - Manages localStorage with React state synchronization
-  - `useKey` - Handles keyboard event listeners with cleanup
-- **StarRating**: Reusable component with responsive sizing and hover effects
-- **Collapsible Boxes**: Space-efficient design with toggle functionality
+Dedicated Search Page: Full-page focus on movie discovery
+Debounced Input: 500ms delay reduces API calls and improves performance
+State Management: Proper loading, error, and empty states
+Responsive Results: Adaptive movie grid for all screen sizes
+
+📱 Mobile-First Responsive Design
+
+Adaptive Navigation: Collapsible mobile menu with touch-friendly interactions
+Flexible Layouts: Stack-to-side transitions based on screen size
+Optimized Content: Smart typography and spacing across devices
+Touch Interactions: Properly sized buttons and interactive elements
 
 ## 📱 Responsive Breakpoints
 
@@ -179,10 +245,15 @@ The app can be easily deployed to platforms like:
 ## 🔮 Future Enhancements
 
 ### 🎯 Next Major Features (In Development)
-- [ ] **React Router**: Multi-page navigation with dedicated routes for search, details, and watchlist
-- [ ] **Context API + useReducer**: Advanced state management for complex application state
-- [ ] **Filtered Search**: Advanced filtering by genre, year, rating, and other criteria
+🎯 Version 5.0.0 (Next Major Release - Advanced Features)
 
+ Advanced State Management: Context API + useReducer for complex app state
+ Search Filters: Filter by genre, year, rating, language, and director
+ Sorting Options: Sort results by relevance, year, rating, or popularity
+ Favorites System: Separate favorites list from watched movies
+ Movie Recommendations: AI-powered suggestions based on viewing history
+ Export Features: Export watched list as PDF or CSV
+ Social Features: Share movie lists and ratings with friends
 ---
 
 ## 🤝 Contributing
