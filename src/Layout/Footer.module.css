@@ -5,9 +5,10 @@
 }
 
 .emoji {
-  font-size: 2rem;
+  font-size: 1.4rem;
   display: inline-block;
   animation: bounce 2s infinite;
+  margin: 0;
 }
 
 .footerBottom {
@@ -15,11 +16,13 @@
   padding: 1.5rem 2rem;
   text-align: center;
   border-top: 1px solid var(--color-background-500);
+  min-height: 3rem;
 }
 
 .copyright {
   font-size: 1.4rem;
   color: var(--color-text-dark);
+  margin: 0;
 }
 
 /* Responsive design */

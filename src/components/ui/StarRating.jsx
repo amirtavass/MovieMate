@@ -4,9 +4,11 @@ const containerStyle = {
   display: "flex",
   alignItems: "center",
   gap: "10px",
+  minWidth: "fit-content",
 };
 const starContainerStyle = {
   display: "flex",
+  flexShrink: 0,
 };
 
 export default function StarRating({
@@ -23,6 +25,9 @@ export default function StarRating({
     margin: "0",
     color,
     fontSize: `${size / 1.5}px`,
+    minWidth: `${size}px`,
+    textAlign: "left",
+    flexShrink: 0,
   };
   const [rating, setRating] = useState(defaultRating);
   const [tempRating, setTempRating] = useState(0);
