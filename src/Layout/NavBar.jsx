@@ -1,8 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Logo from "../components/ui/Logo";
 import styles from "./NavBar.module.css";
 
 function NavBar() {
+  const location = useLocation();
+  const isMovieDetailsPage = location.pathname.startsWith("/movie/");
+
   return (
     <nav className={styles.navbar}>
       <Logo />
@@ -17,9 +20,12 @@ function NavBar() {
         </NavLink>
         <NavLink
           to="/search"
-          className={({ isActive }) =>
-            isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
-          }
+          className={({ isActive }) => {
+            const shouldBeActive = isActive || isMovieDetailsPage;
+            return shouldBeActive
+              ? `${styles.navLink} ${styles.active}`
+              : styles.navLink;
+          }}
         >
           Search Movies
         </NavLink>
