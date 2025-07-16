@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--color-background-100);
   margin-top: auto;
-  border-top: 2px solid var(--color-primary);
+  border-top: 1px solid var(--color-primary);
 }
 
 .emoji {
@@ -16,7 +16,7 @@
   padding: 1.5rem 2rem;
   text-align: center;
   border-top: 1px solid var(--color-background-500);
-  min-height: 3rem;
+  min-height: 1.5rem;
 }
 
 .copyright {

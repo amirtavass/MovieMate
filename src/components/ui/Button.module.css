@@ -1,0 +1,24 @@
+.btn {
+  cursor: pointer;
+  font-size: 1.8rem;
+  border-radius: 10rem;
+  text-transform: uppercase;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  transition: all 0.3s ease;
+}
+.add {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+.add:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-1px);
+}
+.back {
+  color: var(--color-text-dark);
+  background-color: var(--color-background-900);
+}
+.back:hover {
+  background-color: var(--color-background-500);
+}

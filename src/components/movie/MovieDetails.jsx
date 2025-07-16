@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import StarRating from "../ui/StarRating";
 import Loader from "../ui/Loader";
 import styles from "./MovieDetails.module.css";
+import Button from "../ui/Button";
 
 function MovieDetails({ selectedId, onAddWatched, watched }) {
   const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
@@ -93,9 +94,9 @@ function MovieDetails({ selectedId, onAddWatched, watched }) {
       ) : (
         <>
           <header>
-            <button className={styles.btnback} onClick={handleGoBack}>
+            <Button onClick={handleGoBack} type="back">
               ← Back to search
-            </button>
+            </Button>
             <div className={styles.headerContent}>
               <div className={styles.posterWrapper}>
                 <img src={poster} alt={`Poster of ${movie} movie`} />
@@ -130,9 +131,9 @@ function MovieDetails({ selectedId, onAddWatched, watched }) {
                         onSetRating={setUserRating}
                       />
                       {userRating > 0 && (
-                        <button className={styles.btnadd} onClick={handleAdd}>
+                        <Button type="add" onClick={handleAdd}>
                           + Add to watched list
-                        </button>
+                        </Button>
                       )}
                     </>
                   ) : (

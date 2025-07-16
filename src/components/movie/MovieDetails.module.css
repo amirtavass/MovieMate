@@ -158,53 +158,15 @@
   font-weight: 500;
 }
 
-.btnadd {
-  background-color: var(--color-primary);
-  color: var(--color-text);
-  border: none;
-  border-radius: 10rem;
-  font-size: 1.6rem;
-  padding: 1.2rem 2.4rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-  align-self: center;
-}
-
-.btnadd:hover {
-  background-color: var(--color-primary-light);
-  transform: translateY(-2px);
-  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
-}
-
-.btnback {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 2rem;
-  padding: 0.8rem 1.6rem;
-  background-color: transparent;
-  color: var(--color-text);
-  border: 2px solid var(--color-text-dark);
-  border-radius: 0.8rem;
-  font-size: 1.6rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.btnback:hover {
-  background-color: var(--color-text-dark);
-  color: var(--color-background-900);
-  transform: translateX(-4px);
-}
-
 /* Responsive design */
 @media (max-width: 768px) {
   .headerContent {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+  .metaInfo {
+    justify-content: center;
   }
 
   .details img {
@@ -218,11 +180,10 @@
   .credits {
     grid-template-columns: 1fr;
   }
-
-  .btnback {
-    top: 1rem;
-    left: 1rem;
-    height: 3.2rem;
-    width: 3.2rem;
+  .imdbRating {
+    justify-content: center;
+  }
+  .rating {
+    margin: 0px auto;
   }
 }

@@ -25,7 +25,7 @@ export default function StarRating({
     margin: "0",
     color,
     fontSize: `${size / 1.5}px`,
-    minWidth: `${size}px`,
+    minWidth: `${size * 0.7}px`,
     textAlign: "left",
     flexShrink: 0,
   };
