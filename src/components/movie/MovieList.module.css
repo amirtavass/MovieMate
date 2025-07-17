@@ -47,6 +47,7 @@
   align-items: center;
   gap: 0.8rem;
 }
+
 @media (min-width: 640px) {
   .list li {
     font-size: 1.5rem;

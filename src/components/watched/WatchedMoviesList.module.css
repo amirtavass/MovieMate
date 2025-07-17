@@ -1,0 +1,146 @@
+.watchedList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.watchedItem {
+  background-color: var(--color-background-500);
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 6rem 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-background-100);
+}
+
+.watchedItem:hover {
+  background-color: var(--color-background-100);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.poster {
+  width: 6rem;
+  height: 9rem;
+  object-fit: cover;
+  border-radius: 0.6rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.movieInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-width: 0; /* Prevents text overflow */
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ratings {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  color: var(--color-text-dark);
+}
+
+.rating span:first-child {
+  font-size: 1.6rem;
+}
+
+.deleteButton {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-red);
+  background-color: transparent;
+  color: var(--color-red);
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.deleteButton:hover {
+  background-color: var(--color-red);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(250, 82, 82, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .watchedItem {
+    grid-template-columns: 5rem 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+
+  .poster {
+    width: 5rem;
+    height: 7.5rem;
+    grid-row: 1 / -1;
+  }
+
+  .movieInfo {
+    gap: 0.6rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .ratings {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .rating {
+    font-size: 1.3rem;
+  }
+
+  .deleteButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ratings {
+    gap: 1rem;
+  }
+
+  .rating {
+    font-size: 1.2rem;
+  }
+}

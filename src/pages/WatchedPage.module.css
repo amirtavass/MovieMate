@@ -1,0 +1,24 @@
+.watchedContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 100rem;
+  padding: 2rem;
+}
+.emptyState {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.emptyState h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.emptyState p {
+  font-size: 1.6rem;
+  color: var(--color-text-dark);
+  margin-bottom: 2rem;
+}
