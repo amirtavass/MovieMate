@@ -4,15 +4,15 @@ import { useMovies } from "../hooks/useMovies";
 import MovieList from "../components/movie/MovieList";
 import Loader from "../components/ui/Loader";
 import ErrorMessage from "../components/ui/ErrorMessage";
+import { useWatchedMovies } from "../contexts/MoviesContext";
 function SearchResults() {
-  const [query, setQuery] = useState("");
+  const { query, setQuery } = useWatchedMovies();
   const [localQuery, setLocalQuery] = useState(query);
   const { movies, isLoading, error } = useMovies(query);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setQuery(localQuery);
-      console.log("api would be called with", localQuery);
     }, 500);
     return () => clearTimeout(timer);
   }, [localQuery, setQuery]);

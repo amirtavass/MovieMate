@@ -1,20 +1,24 @@
 import { useEffect, useState } from "react";
 import { useKey } from "../../hooks/useKey";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import StarRating from "../ui/StarRating";
 import Loader from "../ui/Loader";
 import styles from "./MovieDetails.module.css";
 import Button from "../ui/Button";
+import { useWatchedMovies } from "../../contexts/MoviesContext";
 
-function MovieDetails({ selectedId, onAddWatched, watched }) {
+function MovieDetails() {
   const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
   const navigate = useNavigate();
+  const { id } = useParams();
+  const { movieDetails, setMoviedetails, addToWatched, watched } =
+    useWatchedMovies();
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [userRating, setUserRating] = useState("");
-  const isWatched = watched.map((movie) => movie.imdbID).includes(selectedId);
+  const isWatched = watched.map((movie) => movie.imdbID).includes(id);
   const watchedUserRating = watched.find(
-    (movie) => movie.imdbID === selectedId
+    (movie) => movie.imdbID === id
   )?.userRating;
 
   const {
@@ -38,7 +42,7 @@ function MovieDetails({ selectedId, onAddWatched, watched }) {
 
   function handleAdd() {
     const newWatchedMovie = {
-      imdbID: selectedId,
+      imdbID: id,
       title,
       year,
       poster,
@@ -47,7 +51,7 @@ function MovieDetails({ selectedId, onAddWatched, watched }) {
       userRating,
     };
 
-    onAddWatched(newWatchedMovie);
+    addToWatched(newWatchedMovie);
     navigate(-1); // Go back to previous page
   }
 
@@ -59,19 +63,25 @@ function MovieDetails({ selectedId, onAddWatched, watched }) {
 
   useEffect(
     function () {
+      if (movieDetails[id]) {
+        setMovie(movieDetails[id]);
+        setIsLoading(false);
+        return;
+      }
       async function getMoiveDetails() {
         setIsLoading(true);
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${API_KEY}&i=${selectedId}`
+          `http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`
         );
 
         const data = await res.json();
         setMovie(data);
+        setMoviedetails((prev) => ({ ...prev, [id]: data }));
         setIsLoading(false);
       }
       getMoiveDetails();
     },
-    [selectedId]
+    [id]
   );
 
   useEffect(
