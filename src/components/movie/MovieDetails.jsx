@@ -6,6 +6,13 @@ import Loader from "../ui/Loader";
 import styles from "./MovieDetails.module.css";
 import Button from "../ui/Button";
 import { useWatchedMovies } from "../../contexts/MoviesContext";
+import {
+  IoArrowBackOutline,
+  IoCalendarOutline,
+  IoChatbubbleOutline,
+  IoGlobeOutline,
+  IoTimeOutline,
+} from "react-icons/io5";
 
 function MovieDetails() {
   const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
@@ -104,7 +111,7 @@ function MovieDetails() {
         <>
           <header>
             <Button onClick={handleGoBack} type="back">
-              ← Back to search
+              <IoArrowBackOutline /> Back to search
             </Button>
             <div className={styles.headerContent}>
               <div className={styles.posterWrapper}>
@@ -116,10 +123,18 @@ function MovieDetails() {
                   <h2>{title}</h2>
 
                   <div className={styles.metaInfo}>
-                    <span>📅 {year}</span>
-                    <span>⏱️ {runtime}</span>
-                    <span>🌍 {country}</span>
-                    <span>🗣️ {language}</span>
+                    <span>
+                      <IoCalendarOutline /> {year}
+                    </span>
+                    <span>
+                      <IoTimeOutline /> {runtime}
+                    </span>
+                    <span>
+                      <IoGlobeOutline /> {country}
+                    </span>
+                    <span>
+                      <IoChatbubbleOutline /> {language}
+                    </span>
                   </div>
 
                   <p className={styles.genre}>{genre}</p>

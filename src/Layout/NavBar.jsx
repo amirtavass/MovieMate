@@ -1,6 +1,11 @@
 import { NavLink, useLocation } from "react-router-dom";
 import Logo from "../components/ui/Logo";
 import styles from "./NavBar.module.css";
+import {
+  IoBookmarkOutline,
+  IoHomeOutline,
+  IoSearchOutline,
+} from "react-icons/io5";
 
 function NavBar() {
   const location = useLocation();
@@ -16,7 +21,8 @@ function NavBar() {
             isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
           }
         >
-          HomePage
+          <IoHomeOutline className={styles.navIcon} />
+          Home
         </NavLink>
         <NavLink
           to="/search"
@@ -27,7 +33,8 @@ function NavBar() {
               : styles.navLink;
           }}
         >
-          Search Movies
+          <IoSearchOutline className={styles.navIcon} />
+          Search
         </NavLink>
         <NavLink
           to="/watched"
@@ -35,7 +42,8 @@ function NavBar() {
             isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
           }
         >
-          My watched list
+          <IoBookmarkOutline className={styles.navIcon} />
+          Watched list
         </NavLink>
       </div>
     </nav>

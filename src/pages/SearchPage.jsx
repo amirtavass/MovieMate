@@ -5,6 +5,7 @@ import MovieList from "../components/movie/MovieList";
 import Loader from "../components/ui/Loader";
 import ErrorMessage from "../components/ui/ErrorMessage";
 import { useWatchedMovies } from "../contexts/MoviesContext";
+import { IoSearchOutline } from "react-icons/io5";
 function SearchResults() {
   const { query, setQuery } = useWatchedMovies();
   const [localQuery, setLocalQuery] = useState(query);
@@ -20,12 +21,15 @@ function SearchResults() {
   return (
     <div className={styles.searchContainer}>
       <div className={styles.searchHeader}>
-        <input
-          placeholder="Search for movies"
-          type="text"
-          value={localQuery}
-          onChange={(e) => setLocalQuery(e.target.value)}
-        />
+        <div className={styles.searchInputWrapper}>
+          <IoSearchOutline className={styles.searchIcon} />
+          <input
+            placeholder="Search for movies"
+            type="text"
+            value={localQuery}
+            onChange={(e) => setLocalQuery(e.target.value)}
+          />
+        </div>
       </div>
       <div className={styles.resultContainer}>
         {isLoading && <Loader />}
