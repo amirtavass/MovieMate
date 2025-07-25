@@ -78,7 +78,7 @@ function MovieDetails() {
       async function getMoiveDetails() {
         setIsLoading(true);
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`
+          `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`
         );
 
         const data = await res.json();
