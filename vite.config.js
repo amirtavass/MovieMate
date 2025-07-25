@@ -11,7 +11,7 @@ export default defineConfig({
     host: true, // Allows access from network
   },
   build: {
-    outDir: "build",
+    outDir: "dist",
     sourcemap: false,
     rollupOptions: {
       output: {
