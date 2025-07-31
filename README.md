@@ -12,10 +12,10 @@ go to:[https://movie-mate-brown.vercel.app/]
 <img width="1350" height="606" alt="Homepage with cinematic hero section" src="https://github.com/user-attachments/assets/3d5cf2f7-4036-4aeb-91f6-799734dc2ee8" />
 
 **Search Page with Results**
-![alt text](image-1.png)
+<img width="1350" height="606" alt="Homepage with cinematic hero section" src="./public/image-1.png" />
 
 **Watched Page**
-![alt text](image-2.png)
+<img width="1350" height="606" alt="Homepage with cinematic hero section" src="./public/image-2.png" />
 
 ## 📝 Update Log
 
