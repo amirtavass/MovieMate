@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export function useMovies(query) {
   const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
@@ -22,19 +23,23 @@ export function useMovies(query) {
             throw new Error("something went wrong when fetching movies");
           const data = await res.json();
           if (data.Response === "False") {
-            throw new Error("Movie not found");
+            toast.error("No movies found. Try a different search term!");
+            setMovies([]);
+            setError("Movie not found");
+            return;
           }
           setMovies(data.Search);
           setError("");
         } catch (err) {
           if (err.name !== "AbortError") {
+            toast.error("Failed to search movies. Please try again.");
             setError(err.message);
           }
         } finally {
           setIsLoading(false);
         }
       }
-      if (query.length < 3) {
+      if (query.length < 4) {
         setMovies([]);
         setError("");
         return;

@@ -12,7 +12,9 @@ function WatchedPage() {
         <div className={styles.emptyState}>
           <h2>No movies in your watched list yet🤔</h2>
           <p>Start exploring and rating movies to build your collection!</p>
-          <Link to="/search">Browse Movies</Link>
+          <Link className={styles.browseLink} to="/search">
+            Browse Movies
+          </Link>
         </div>
       ) : (
         <>

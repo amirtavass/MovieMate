@@ -2,6 +2,21 @@
 
 Your personal movie companion! A modern, responsive movie search and tracking application built with React. Navigate through dedicated pages, search for movies, view detailed information, rate them, and keep track of your watched movies list with seamless routing and advanced state management.
 
+## Live Demo
+
+go to:[https://movie-mate-brown.vercel.app/]
+
+## 🚀 Screenshots
+
+**Homepage with Hero Section**
+<img width="1350" height="606" alt="Homepage with cinematic hero section" src="https://github.com/user-attachments/assets/3d5cf2f7-4036-4aeb-91f6-799734dc2ee8" />
+
+**Search Page with Results**
+![alt text](image-1.png)
+
+**Watched Page**
+![alt text](image-2.png)
+
 ## 📝 Update Log
 
 ### Version 5.0.0 (Latest - Context API & Advanced State Management)
@@ -75,14 +90,6 @@ Your personal movie companion! A modern, responsive movie search and tracking ap
 - **Custom Hooks**: Reusable logic for movies, localStorage, and keyboard events
 - **localStorage Integration**: Persistent data across browser sessions via Context
 - **Mobile-First Design**: Responsive breakpoints with modern CSS techniques
-
-## 🚀 Screenshots
-
-**Homepage with Hero Section**
-<img width="1350" height="606" alt="Homepage with cinematic hero section" src="https://github.com/user-attachments/assets/3d5cf2f7-4036-4aeb-91f6-799734dc2ee8" />
-
-**Search Page with Results**
-<img width="1363" height="612" alt="Dedicated search page with movie results" src="https://github.com/user-attachments/assets/371c787d-c38b-43c6-bee3-73f5dd7bf897" />
 
 ## 🛠️ Technologies Used
 

@@ -22,3 +22,19 @@
   color: var(--color-text-dark);
   margin-bottom: 2rem;
 }
+.browseLink {
+  font-size: 2.4rem;
+  text-decoration: none;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: 0.8rem;
+  padding: 1.2rem 2.4rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.4rem 1.2rem rgba(103, 65, 203, 0.4);
+}
+.browseLink:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 0.6rem 2rem rgba(103, 65, 217, 0.6);
+}

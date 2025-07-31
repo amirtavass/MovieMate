@@ -1,5 +1,6 @@
 import { useContext, createContext, useState } from "react";
 import { useLocalStorageState } from "../hooks/useLocalStorageState";
+import toast from "react-hot-toast";
 
 const MoviesContext = createContext();
 function MoviesProvider({ children }) {
@@ -9,9 +10,18 @@ function MoviesProvider({ children }) {
 
   function addToWatched(movie) {
     setWatched((watched) => [...watched, movie]);
+    toast.success(`"${movie.title}" added to your watched list! 🎬`);
   }
   function removeFromWatched(movieId) {
-    setWatched(watched.filter((movie) => movie.imdbID !== movieId));
+    const movieToRemove = watched.find((movie) => movie.imdbID === movieId);
+
+    if (!movieToRemove) toast.error("Movie not found in watched list!");
+    else {
+      setWatched(watched.filter((movie) => movie.imdbID !== movieId));
+      toast.success(
+        `"${movieToRemove.title}" removed from watched list successfully!`
+      );
+    }
   }
 
   return (
