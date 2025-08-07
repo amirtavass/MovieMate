@@ -1,6 +1,14 @@
+import { useState } from "react";
 import styles from "./WatchedMoviesList.module.css";
+import Modal from "../ui/Modal";
 
 function WatchedMovie({ movie, onDeleteMovie }) {
+  const [showModal, setShowModal] = useState(false);
+  const handleDelete = () => {
+    onDeleteMovie(movie.imdbID);
+    setShowModal(false);
+  };
+
   return (
     <li className={styles.watchedItem}>
       <img
@@ -29,11 +37,19 @@ function WatchedMovie({ movie, onDeleteMovie }) {
 
       <button
         className={styles.deleteButton}
-        onClick={() => onDeleteMovie(movie.imdbID)}
-        aria-label={`Remove ${movie.title} from watched list`}
+        // onClick={() => onDeleteMovie(movie.imdbID)}
+        // aria-label={`Remove ${movie.title} from watched list`}
+        onClick={() => setShowModal(true)}
       >
         ×
       </button>
+      {showModal && (
+        <Modal
+          onClose={() => setShowModal(false)}
+          onConfirm={handleDelete}
+          movieTitle={movie.title}
+        />
+      )}
     </li>
   );
 }
