@@ -1,10 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import { useKey } from "../../hooks/useKey";
+import { useKey } from "../../hooks/useKey.tsx";
 import styles from "./Search.module.css";
 
-function Search({ query, setQuery }) {
-  const [localQuery, setLocalQuery] = useState(query);
-  const inputEl = useRef(null);
+interface SearchProps {
+  query: string;
+  setQuery: (query: string) => void;
+}
+
+function Search({ query, setQuery }: SearchProps) {
+  const [localQuery, setLocalQuery] = useState<string>(query);
+  const inputEl = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -15,7 +20,7 @@ function Search({ query, setQuery }) {
 
   useKey("Enter", function () {
     if (document.activeElement === inputEl.current) return;
-    inputEl.current.focus();
+    inputEl.current?.focus();
     setLocalQuery("");
   });
 

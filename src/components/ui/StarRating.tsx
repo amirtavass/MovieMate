@@ -1,15 +1,25 @@
-import { useState } from "react";
+import { CSSProperties, useState } from "react";
 
-const containerStyle = {
+const containerStyle: CSSProperties = {
   display: "flex",
   alignItems: "center",
   gap: "10px",
   minWidth: "fit-content",
 };
-const starContainerStyle = {
+const starContainerStyle: CSSProperties = {
   display: "flex",
   flexShrink: 0,
 };
+
+interface StarRatingProps {
+  maxRating?: number;
+  color?: string;
+  size?: number;
+  messages?: string[];
+  className?: string;
+  defaultRating?: number;
+  onSetRating?: (rating: number) => void;
+}
 
 export default function StarRating({
   maxRating = 5,
@@ -19,8 +29,8 @@ export default function StarRating({
   messages = [],
   defaultRating = 0,
   onSetRating = () => {},
-}) {
-  const textStyle = {
+}: StarRatingProps) {
+  const textStyle: CSSProperties = {
     lineHeight: "1",
     margin: "0",
     color,
@@ -29,10 +39,10 @@ export default function StarRating({
     textAlign: "left",
     flexShrink: 0,
   };
-  const [rating, setRating] = useState(defaultRating);
-  const [tempRating, setTempRating] = useState(0);
+  const [rating, setRating] = useState<number>(defaultRating);
+  const [tempRating, setTempRating] = useState<number>(0);
 
-  function handleRating(rating) {
+  function handleRating(rating: number) {
     setRating(rating);
     onSetRating(rating);
   }
@@ -62,7 +72,16 @@ export default function StarRating({
   );
 }
 
-function Star({ onRate, full, onHoverIn, onHoverOut, color, size }) {
+interface StarProps {
+  onRate: () => void;
+  full: boolean;
+  onHoverIn: () => void;
+  onHoverOut: () => void;
+  color: string;
+  size: number;
+}
+
+function Star({ onRate, full, onHoverIn, onHoverOut, color, size }: StarProps) {
   const starStyle = {
     width: `${size}px`,
     height: `${size}px`,

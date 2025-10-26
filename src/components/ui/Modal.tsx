@@ -1,6 +1,12 @@
 import styles from "./Modal.module.css";
 import { createPortal } from "react-dom";
-function Modal({ onClose, onConfirm, movieTitle }) {
+
+interface ModalProps {
+  onClose: () => void;
+  onConfirm: () => void;
+  movieTitle: string;
+}
+function Modal({ onClose, onConfirm, movieTitle }: ModalProps) {
   console.log("Modal is rendering!");
   return createPortal(
     <div className={styles.overlay}>
