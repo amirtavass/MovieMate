@@ -19,11 +19,13 @@ go to:[https://movie-mate-brown.vercel.app/]
 
 ## 📝 Update Log
 
-### Version 6.0.0 (Latest - TypeScript Migration Phase 1)
+### Version 6.0.0 (Latest - TypeScript Migration Phase 2)
 
 - ✅ **TypeScript Setup**: Installed TypeScript and configured tsconfig.json with strict mode
 - ✅ **UI Components Migration**: Converted all UI components to TypeScript
   - Button, ErrorMessage, Loader, Logo, Main, Modal, Search, StarRating
+- ✅ **Movie Components Migration**: Converted Movie and MovieList to TypeScript
+  - Movie, MovieList with proper type definitions
 - ✅ **Type Safety**: Added interfaces for component props with proper type definitions
 - ✅ **Generic Types**: Implemented useState and useRef with proper generic types
 - ✅ **Custom Hook Types**: Typed useKey hook with proper event types
@@ -31,15 +33,19 @@ go to:[https://movie-mate-brown.vercel.app/]
 - ✅ **Optional Props**: Implemented optional props with default values using TypeScript
 - ✅ **Function Types**: Typed all callback functions and event handlers
 - ✅ **Type Narrowing**: Applied optional chaining for null-safe ref access
+- ✅ **Shared Types**: Created MovieData interface exported from MovieList and reused in Movie component
+- ✅ **Array Types**: Properly typed array props with TypeScript array syntax
 
 **Migration Progress:**
+
 - ✅ Phase 1: UI Components (Complete)
-- ⏳ Phase 2: Movie Components (Pending)
-- ⏳ Phase 3: Watched Components (Pending)
-- ⏳ Phase 4: Layout Components (Pending)
-- ⏳ Phase 5: Pages (Pending)
-- ⏳ Phase 6: Hooks & Context (Pending)
-- ⏳ Phase 7: Type Definitions & API Types (Pending)
+- ✅ Phase 2: Movie Components (Complete - Movie, MovieList)
+- ⏳ Phase 3: Movie Details Component (Pending)
+- ⏳ Phase 4: Watched Components (Pending)
+- ⏳ Phase 5: Layout Components (Pending)
+- ⏳ Phase 6: Pages (Pending)
+- ⏳ Phase 7: Hooks & Context (Pending)
+- ⏳ Phase 8: Type Definitions & API Types (Pending)
 
 ### Version 5.0.0 (Previous - Context API & Advanced State Management)
 

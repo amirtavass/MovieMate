@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import styles from "./MovieList.module.css";
+import { MovieData } from "./MovieList";
 
-function Movie({ movie }) {
+interface MovieProps {
+  movie: MovieData;
+}
+
+function Movie({ movie }: MovieProps) {
   return (
     <li>
       <Link to={`/movie/${movie.imdbID}`} className={styles.movieLink}>
