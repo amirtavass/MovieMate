@@ -1,9 +1,15 @@
 import { useState } from "react";
 import styles from "./WatchedMoviesList.module.css";
 import Modal from "../ui/Modal";
+import { WatchedMovie as EachWatchedMovie } from "./WatchedSummary";
 
-function WatchedMovie({ movie, onDeleteMovie }) {
-  const [showModal, setShowModal] = useState(false);
+interface WatchedMovieProps {
+  movie: EachWatchedMovie;
+  onDeleteMovie: (id: string) => void;
+}
+
+function WatchedMovie({ movie, onDeleteMovie }: WatchedMovieProps) {
+  const [showModal, setShowModal] = useState<boolean>(false);
   const handleDelete = () => {
     onDeleteMovie(movie.imdbID);
     setShowModal(false);

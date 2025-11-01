@@ -1,7 +1,15 @@
 import WatchedMovie from "./WatchedMovie";
 import styles from "./WatchedMoviesList.module.css";
+import { WatchedMovie as EachWatchedMovie } from "./WatchedSummary";
 
-function WatchedMoviesList({ watched, removeFromWatched }) {
+interface WatchedMoviesListProps {
+  watched: EachWatchedMovie[];
+  removeFromWatched: (id: string) => void;
+}
+function WatchedMoviesList({
+  watched,
+  removeFromWatched,
+}: WatchedMoviesListProps) {
   return (
     <ul className={styles.watchedList}>
       {watched.map((movie) => (
